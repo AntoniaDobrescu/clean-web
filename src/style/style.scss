@@ -1,3 +1,279 @@
-body {
-	background: gray;
+$backgroundColor: #fafafa;
+$backgroundColorPhoto: #333333;
+
+$primaryColor: #ededed;
+$secondaryColor: #ff5d30;
+
+$primaryColorText: #7b7b7b;
+$secondaryColorText: #9f9f9f;
+
+$widthMobile: 600px;
+$widthTablet: 1200px;
+
+@import "reset";
+
+.body {
+	background-color: $backgroundColor;
+	margin: 0;
 }
+
+.mainContainer {
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+.menuTop {
+	height: 75px;
+	background-color: $primaryColor;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	padding: 0 20px;
+
+	@media (min-width: $widthMobile) {
+		justify-content: flex-end;
+	}
+}
+
+.menuTopList {
+	margin: 0;
+	list-style: none;
+	display: flex;
+	padding: 0;
+	white-space: nowrap;
+	font-size: 9px;
+}
+
+.menuTopItem {
+	font-size: 10px;
+
+	@media (min-width: $widthMobile) {
+		font-size: 12px;
+	}
+}
+
+.menuTopAnchor {
+	text-decoration: none;
+	color: $secondaryColorText;
+	padding: 5px;
+}
+
+.logoWrapper {
+
+	@media (min-width: $widthMobile) {
+		display: none;
+	}
+}
+
+.logo {
+	font-size: 30px;
+	margin: 0;
+}
+
+.templateText {
+	margin: 0;
+	font-size: 10px;
+}
+
+.menuTopListWrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.searchBar {
+	margin: 0;
+	position: relative;
+
+	@media (min-width: $widthMobile) {
+		margin: 0 20px 0 50px;
+	}
+}
+.searchBarInput {
+	border: none;
+	background: $secondaryColorText;
+	padding: 0;
+	height: 25px;
+	border-radius: 50px;
+}
+
+.searchBarButton {
+	border: none;
+	padding: 0;
+	position: absolute;
+	top: 4px;
+	right: 7px;
+	background: none;
+}
+
+.searchArrow {
+	background-color: $primaryColor;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.fas fa-chevron-circle-right {
+	color: $primaryColor;
+}
+
+.logoAndMenuWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 30px;
+
+	@media (min-width: $widthMobile) {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.logoWrapper {
+	display: none;
+
+	@media (min-width: $widthMobile) {
+		display: block;
+	}
+}
+
+.logo {
+
+	@media (min-width: $widthMobile) {
+		display: block;
+		font-size: 30px;
+		margin: 0;
+	}
+
+	@media (min-width: $widthTablet) {
+		font-size: 36px;
+	}
+}
+
+.templateText {
+	font-size: 13px;
+	margin-top: 15px;
+	text-align: center;
+
+	@media (min-width: $widthMobile) {
+		text-align: left;
+		margin: 0;
+	}
+}
+
+
+	.menu {
+		background-color: $primaryColorText;
+		width: 100%;
+
+		@media (min-width: $widthMobile) {
+			background-color: $backgroundColor;
+		}
+
+		.menuList {
+			margin: 0;
+			box-sizing: border-box;
+			padding: 10px 0;
+			text-align: center;
+			font-size: 14px;
+
+			@media (min-width: $widthMobile) {
+				display: flex;
+				justify-content: flex-end;
+				font-size: 12px;
+			}
+
+			.menuItem {
+				list-style: none;
+				padding: 5px;
+
+				&:hover {
+					background-color: $secondaryColorText;
+				}
+
+				@media (min-width: $widthMobile) {
+
+					&:hover {
+						background-color: $backgroundColor;
+					}
+
+				}
+
+				.menuAnchor {
+					text-decoration: none;
+					color: $backgroundColor;
+
+					@media (min-width: $widthMobile) {
+						color: $primaryColorText;
+
+						&:hover {
+							color: $secondaryColor;
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+.slider {
+
+	.sliderElementWrapper {
+		display: flex;
+		justify-content: center;
+
+		.sliderFrontElement {
+			background-color: $backgroundColorPhoto;
+			border: 10px $primaryColor solid;
+			height: 190px;
+			width: 190px;
+			border-radius: 50%;
+			position: absolute;
+			z-index: 2;
+
+			@media (min-width:$widthTablet) {
+				height: 360px;
+				width: 360px;
+			}
+
+			.sliderBackElementLeft {
+				background-color: $backgroundColorPhoto;
+				border: 10px $primaryColor solid;
+				height: 137px;
+				width: 137px;
+				border-radius: 50%;
+				position: absolute;
+				left: -140px;
+				z-index: 1;
+
+				@media (min-width:$widthTablet) {
+					height: 275px;
+					width: 275px;
+				}
+			}
+			.sliderBackElementRight {
+				background-color: $backgroundColorPhoto;
+				border: 10px $primaryColor solid;
+				height: 137px;
+				width: 137px;
+				border-radius: 50%;
+				position: absolute;
+				right: -140px;
+				z-index: 1;
+
+				@media (min-width:$widthTablet) {
+					height: 275px;
+					width: 275px;
+				}
+			}
+		}
+
+	}
+}
+
+
